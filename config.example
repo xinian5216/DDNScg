@@ -1,0 +1,26 @@
+# Cloudflare API Token，需要 Zone:DNS:Edit；自动查询 Zone ID 时还需 Zone:Zone:Read。
+CF_API_TOKEN=
+
+# 二选一：已知 Zone ID 可只填 CF_ZONE_ID，否则填写根域名 CF_ZONE。
+CF_ZONE_ID=
+CF_ZONE=example.com
+
+# 完整记录名；多个记录共用同一组地址时用逗号分隔。
+RECORD_NAMES=vps.example.com
+
+# auto 会按实际网络栈更新可用记录；也可指定 A、AAAA 或 A,AAAA。
+RECORD_TYPES=auto
+
+# auto / external / interface
+# IPv4 的 auto 优先外部检测，适合 NAT VPS；IPv6 的 auto 优先默认路由所选的本机源地址。
+IPV4_SOURCE=auto
+IPV6_SOURCE=auto
+
+# auto 表示跟随默认路由；多网卡或多 IPv6 地址时可以指定 eth0 等接口。
+INTERFACE=auto
+
+# 非 HTTP 服务或非 Cloudflare 支持端口建议保持 false。
+PROXIED=false
+
+# 1 表示 Cloudflare 自动 TTL；关闭代理时也可填写 60–86400。
+TTL=1
