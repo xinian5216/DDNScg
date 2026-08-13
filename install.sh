@@ -108,7 +108,9 @@ install_dependencies() {
 
 download_program() {
   local destination="$1" script_dir local_source url family
-  script_dir="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" 2>/dev/null && pwd -P || true)"
+  if ! script_dir="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" 2>/dev/null && pwd -P)"; then
+    script_dir=""
+  fi
   local_source="${script_dir}/ddnscg.sh"
   if [[ -r "$local_source" ]]; then
     cp "$local_source" "$destination"
