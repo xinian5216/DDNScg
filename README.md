@@ -104,7 +104,7 @@ INTERFACE=eth0
 
 ### Cloudflare 代理
 
-`PROXIED=false` 是更稳妥的默认值。SSH、Xray 或其他非 HTTP 服务，以及 Cloudflare 不支持代理的端口，都应保持关闭；只有明确需要 Cloudflare 橙云代理时才改为 `true`。
+`PROXIED=false` 是更稳妥的默认值。SSH 或其他非 HTTP 的 TCP/UDP 服务，以及 Cloudflare 不支持代理的端口，都应保持关闭；只有明确需要 Cloudflare 橙云代理时才改为 `true`。
 
 ## 常用命令
 
